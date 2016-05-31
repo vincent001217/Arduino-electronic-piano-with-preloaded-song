@@ -1,0 +1,23 @@
+//electrical piano part
+const int speaker=12;
+const int sw[8]={8,7,6,5,4,3,2};
+const int frequency[8]={523,587,659,698,784,880,988};//frequency corresponding to notes
+int i;
+int val;
+void setup()
+{
+for(i=0;i<8;i++)
+pinMode(sw[i],INPUT_PULLUP);
+pinMode(speaker,OUTPUT);
+}
+
+//response to user's pushes
+void loop()
+{
+for(i=0;i<8;i++)
+{
+val=digitalRead(sw[i]);
+if(val==0)
+tone(speaker,frequency[i],100);
+}
+}
