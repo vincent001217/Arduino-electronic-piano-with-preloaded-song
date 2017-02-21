@@ -152,7 +152,7 @@ void play(int *melody, int *noteDurations, int num){
   }
 }
 
-// 七段顯示器製作倒數功能 (v2)
+// countdown function
 
 // define the LED digit patterns, from 0 - 9
 // 1 = LED on, 0 = LED off, in this order:
@@ -179,10 +179,10 @@ void setup() {
   pinMode(8, OUTPUT);
   pinMode(9, OUTPUT);
   pinMode(11, OUTPUT);
-  digitalWrite(9, 0);  // 關閉小數點
+  digitalWrite(9, 0);  
 }
 
-// 在七段顯示器上顯示指定的一個數字 
+// display the designated number
 void sevenSegWrite(byte digit) {
   byte pin = 2;
   for (byte seg = 0; seg < 7; ++seg) {
@@ -197,7 +197,7 @@ void loop() {
     sevenSegWrite(digit - 1); 
   }
   
-  // 暫停 4 秒鐘
+  // pause for 4 seconds
   delay(4000);
 
   
